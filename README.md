@@ -1,65 +1,52 @@
-# Laravel Leaflet JS - Example
+# Navegacion Unitropico
 
-This is an example project for [Leaflet JS](https://leafletjs.com) and [OpenStreetMap](https://www.openstreetmap.org) built with Laravel 5.8.
+Proyecto de mapa universitario con el uso de [Leaflet JS](https://leafletjs.com) y [OpenStreetMap](https://www.openstreetmap.org) construido en Laravel 8.
 
-![Laravel Leaflet JS Project Example](public/screenshots/leaflet-map-01.jpg)
+![Ejemplo](public/screenshots/Screenshot%20from%202023-12-03%2016-04-39.png)
 
-## Features
+## Caracteristicas
 
-In this project, we have an Outlet Management (CRUD) with localtion/coordinate point that shown in map. We also have coordinate entry with direct map pointing on Outlet Create and Edit form.
+En este proyecto buscamos guiar a la comunidad universitaria de nuevo ingreso con un mapa donde se pueda ver los lugares mas importantes del campus.
 
-## Installation Steps
+Fue implementado un manejo de marcadores (CRUD) con informacion como la localizacion/coordenadas y descripcion de ellos.
 
-Follow this instructions to install the project:
+Tambien cuenta con una entrada directa de marcadores desde el mapa. 
 
-1. Clone this repo.
+
+## Pasos de instalacion
+Se requiere tener instalado:
+* PHP
+* Composer
+* Mysql Community
+
+Seguir los siguientes pasos para instalacion:
+
+1. Clonar el repositorio.
     ```bash
-    $ git clone git@github.com:nafiesl/laravel-leaflet-example.git
-    # or
-    $ git clone https://github.com/nafiesl/laravel-leaflet-example.git
+    $ git clone https://github.com/Chirreter0/laravel-leaflet-unitropico.git
     ```
-2. `$ cd laravel-leaflet-example`
+2. `$ cd laravel-leaflet`
 3. `$ composer install`
 4. `$ cp .env.example .env`
 5. `$ php artisan key:generate`
-6. Set **database config** on `.env` file
+6. Llenar los datos de configuracion de su **Base de datos** en `.env`
 7. `$ php artisan migrate`
 8. `$ php artisan serve`
-10. Open `https://localhost:8000` with browser.
+10. Abrir `https://localhost:8000` con su explorador web.
 
-### Demo Records
+### Datos Iniciales
 
-If we need some outlet demo records, we can use model factory within tinker:
-
+Si necesita llenar la base de datos con los marcadores iniciales:
 ```bash
-$ php artisan tinker
->>> factory(App\Outlet::class, 30)->create();
+$ php artisan db:seed
 ```
+### Direcciones
 
-### Leaflet config
+Vista Administrador
+* http://127.0.0.1:8000/admin
 
-We have a `config/leaflet.php` file in this project. Set default **zoom level** and **map center** coordinate here (or in `.env` file).
-
-```php
-<?php
-
-return [
-    'zoom_level'           => 13,
-    'detail_zoom_level'    => 16,
-    'map_center_latitude'  => env('MAP_CENTER_LATITUDE', '-3.313695'),
-    'map_center_longitude' => env('MAP_CENTER_LONGITUDE', '114.590148'),
-];
-```
-
-> Please note that this is not an official or required config file from Leaflet JS, it is just a custom config for this project.
-
-## Testing
-
-Run PHPUnit to run feature test:
-
-```bash
-$ vendor/bin/phpunit
-```
+Vista Usuario
+* http://127.0.0.1:8000/
 
 ## License
 

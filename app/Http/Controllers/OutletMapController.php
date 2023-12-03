@@ -16,4 +16,8 @@ class OutletMapController extends Controller
     {
         return view('outlets.map');
     }
+    public function inicio(Request $request)
+    {
+        return view('main');
+    }
 }

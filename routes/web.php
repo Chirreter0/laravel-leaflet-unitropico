@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'OutletMapController@index');
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/','OutletMapController@inicio');
+
+Route::get('/admin', 'OutletMapController@index');
 
 Auth::routes();
 
@@ -20,5 +25,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*
  * Outlets Routes
  */
-Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
+Route::get('/marcadores', 'OutletMapController@index')->name('outlet_map.index');
 Route::resource('outlets', 'OutletController');
