@@ -25,7 +25,7 @@ Seguir los siguientes pasos para instalacion:
     ```bash
     $ git clone https://github.com/Chirreter0/laravel-leaflet-unitropico.git
     ```
-2. `$ cd laravel-leaflet`
+2. `$ cd laravel-leaflet-unitropico`
 3. `$ composer install`
 4. `$ cp .env.example .env`
 5. `$ php artisan key:generate`
